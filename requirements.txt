@@ -1,0 +1,9 @@
+nltk
+Flask
+transformers
+scikit-learn
+farm-haystack[inference]
+farm-haystack
+google-cloud-aiplatform
+rank_bm25
+dataclasses-json
