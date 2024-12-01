@@ -18,7 +18,8 @@ def get_response():
     data = request.get_json()
     query = data['query']
     topics = data['topics'] if 'topics' in data else []
-    return api_handler.get_response(query, topics)
+    user_id = data['user_id']
+    return api_handler.get_response(user_id, query, topics)
 
 
 
