@@ -1,9 +1,9 @@
-from rank_bm25 import BM25Okapi
 import json
 
-import app
-from util.text_preprocessing import TextPreprocessor
+from rank_bm25 import BM25Okapi
+
 from util.filereader import get_absolute_path
+from util.text_preprocessing import TextPreprocessor
 
 
 class WikiIndexer(object):
@@ -22,8 +22,8 @@ class WikiIndexer(object):
         return t_docs
 
     def get_top_docs(self, query, topics, k=5):
-        query = TextPreprocessor.preprocess_text(query)
-        scores = self.bm25.get_scores(query)
+        query_tokens = TextPreprocessor.get_processed_tokens(query)
+        scores = self.bm25.get_scores(query_tokens)
         score_doc_list = list(zip(scores, self.wiki_docs))
         score_doc_list = sorted(score_doc_list, key=lambda x: x[0], reverse=True)
         # filtered_docs = [d['summary'] for _,d in score_doc_list if d['topic'] in topics]
