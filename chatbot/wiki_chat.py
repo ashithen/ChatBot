@@ -1,7 +1,9 @@
-from wiki.haystack import HaystackExtractor
-from wiki.indexer import WikiIndexer
 import vertexai
 from vertexai.generative_models import GenerativeModel
+
+from wiki.haystack import HaystackExtractor
+from wiki.indexer import WikiIndexer
+
 
 class WikiChat(object):
 
