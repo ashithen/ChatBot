@@ -12,6 +12,7 @@ class WikiChat(object):
 
     prompt_template = """
     Extract relevant texts for the given query from the following context and give the consice summary of it.
+    Just give the consice summary, don't add any error messages or the information about the context.
     
     Query : 
     {query}
