@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional
 
+@dataclasses_json
 @dataclass
 class ChatResponse:
     user_id: str

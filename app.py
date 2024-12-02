@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask import request
 from chatbot.api_handlers import ChatBotHandler
 
@@ -17,7 +17,7 @@ def get_response():
     query = data['query']
     topics = data['topics'] if 'topics' in data else []
     user_id = data['user_id']
-    return api_handler.get_response(user_id, query, topics)
+    return jsonify(api_handler.get_response(user_id, query, topics))
 
 
 if __name__ == '__main__':
