@@ -17,7 +17,7 @@ class WikiChat(object):
         self.indexer = WikiIndexer()
         self.extractor = HaystackExtractor()
         aiplatform.init(project='irproject1-436619', location='us-central1')
-        self.generation_model = TextGenerationModel.from_pretrained("text-bison@001")
+        self.generation_model = TextGenerationModel.from_pretrained("text-bison@002")
 
     def getResponseFromWiki(self, query, summaries):
         extracted_text = self.extractor.get_relevant_contexts(query, summaries)
