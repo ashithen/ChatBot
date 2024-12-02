@@ -1,8 +1,8 @@
+from chatbot.chat_response import ChatResponse
 from chatbot.chitchat import ChitChat
 from chatbot.topic_classifier import TopicClassifier
 from chatbot.wiki_chat import WikiChat
 from wiki.indexer import WikiIndexer
-from  chatbot.chat_response import ChatResponse
 
 
 class ChatBotHandler:

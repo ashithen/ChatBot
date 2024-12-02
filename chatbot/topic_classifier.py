@@ -1,11 +1,9 @@
 import pickle
 
-from util.text_preprocessing import TextPreprocessor
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.pipeline import make_pipeline, Pipeline
-import app
+from sklearn.pipeline import Pipeline
+
 from util.filereader import get_absolute_path
+from util.text_preprocessing import TextPreprocessor
 
 
 class TopicClassifier:
