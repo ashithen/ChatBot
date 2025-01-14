@@ -6,17 +6,17 @@ from wiki.indexer import WikiIndexer
 
 
 class WikiChat(object):
-
     PROJECT_ID = "irproject1-436619"
     vertexai.init(project=PROJECT_ID, location="us-central1")
 
     prompt_template = """
-    Extract relevant texts for the given query from the following context and give the consice summary of it.
-    Just give the consice summary, don't add any error messages or the information about the context.
-    
-    Query : 
+    Extract and summarize the relevant information from the given context based on the query provided. 
+    Deliver only a concise summary without including any additional messages, explanations, or notes about the context.
+
+    Query:
     {query}
-    Context : 
+
+    Context:
     {context}
     """
 
@@ -30,6 +30,6 @@ class WikiChat(object):
         return self.get_summary(query, '\n'.join(summaries))
 
     def get_summary(self, query, summaries):
-        prompt = self.prompt_template.format(query=query,context=summaries)
+        prompt = self.prompt_template.format(query=query, context=summaries)
         summary = self.model.generate_content(prompt).text
         return summary
